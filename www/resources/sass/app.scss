@@ -327,19 +327,19 @@ $dark-color: #172835;
 		line-height: 2em;
 		border-radius: 1em;
 		color: #fff;
-		&.statusI {
+		&.INICIAL {
 			background: $main-color;
 			.fa:before {
 				content: '\f073'; //Calendario
 			}
 		}
-		&.statusT {
+		&.ATENDIDO {
 			background: $sec-color;
 			.fa:before {
 				content: '\f00c'; // Check
 			}
 		}
-		&.statusD {
+		&.NAOATENDIDO {
 			background: #FF4F4F;
 			.fa:before {
 				content: '\f00d'; // Remove
