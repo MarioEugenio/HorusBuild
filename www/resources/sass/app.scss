@@ -20,6 +20,61 @@ $ios7-blue: #4fcfff;
 	}
 }
 
+// Fonte face Signika Negative
+
+body {
+	font-family: 'signika_negativeregular';
+}
+
+@font-face {
+    font-family: 'signika_negativesemibold';
+    src: url('../font/signikanegative-semibold-webfont.eot');
+    src: url('../font/signikanegative-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/signikanegative-semibold-webfont.woff') format('woff'),
+         url('../font/signikanegative-semibold-webfont.ttf') format('truetype'),
+         url('../font/signikanegative-semibold-webfont.svg#signika_negativesemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'signika_negativeregular';
+    src: url('../font/signikanegative-regular-webfont.eot');
+    src: url('../font/signikanegative-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/signikanegative-regular-webfont.woff') format('woff'),
+         url('../font/signikanegative-regular-webfont.ttf') format('truetype'),
+         url('../font/signikanegative-regular-webfont.svg#signika_negativeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'signika_negativelight';
+    src: url('../font/signikanegative-light-webfont.eot');
+    src: url('../font/signikanegative-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/signikanegative-light-webfont.woff') format('woff'),
+         url('../font/signikanegative-light-webfont.ttf') format('truetype'),
+         url('../font/signikanegative-light-webfont.svg#signika_negativelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'signika_negativebold';
+    src: url('../font/signikanegative-bold-webfont.eot');
+    src: url('../font/signikanegative-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/signikanegative-bold-webfont.woff') format('woff'),
+         url('../font/signikanegative-bold-webfont.ttf') format('truetype'),
+         url('../font/signikanegative-bold-webfont.svg#signika_negativebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 // Custom header DATASUS
 
 $main-color: #4fcfff; // Cor principal
@@ -39,21 +94,35 @@ $dark-color: #172835;
 }
 
 .datasus-loading {
-	background: url(../img/app-bg.jpg) no-repeat center center fixed;
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	.fa {
-		line-height: 100%;
-		color: rgba(0, 0, 0, 0.19);
-		font-size: 6em;
-		position: absolute;
+	position: relative;
+	.datasus-loading-applogo {
+		text-align: center;
+		position: fixed;
+		width: 100%;
 		top: 50%;
 		left: 50%;
-		margin-left: -0.4em;
-		margin-top: -0.4em;
+		width: 50%;
+		margin: -45% 0 0 -25%;
+		img {
+			width: 100%;
+		}
+	}
+	.datasus-loading-datasuslogo {
+		background: rgba(0, 0, 0, 0.15);
+		text-align: center;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		padding: 1em 0 0.6em;
+		img {
+			width: 50%;
+		}		
 	}
 }
+
 
 // Side Menu
 
@@ -75,6 +144,7 @@ $dark-color: #172835;
 			text-align: left;
 			font-weight: 400;
 			color: rgba(114, 138, 155, 1);
+			font-family: 'signika_negativeregular', sans-serif;
 		}
 		&.x-button-pressing {
 			background: rgba(255, 255, 255, 0.1);
@@ -105,79 +175,120 @@ $dark-color: #172835;
 }
 
 .horus-main-logo-wrapper {
-	position: absolute;
-	left: 50%;
-	margin-left: -25%;
-	top: 50%;
-	margin-top: -40%;
-	width: 50%;
-	height: 50%;
-	img {
-		width: 100%;
+	text-align: center;
+	.horus-main-logo-img {
+		width: 50%;
+		max-width: 300px;
 	}
 }
 
-.horus-main-logo {
-	background: url(../img/horus-main-logo.png) no-repeat;
-	webkit-background-size: 125px 195px;
-	-moz-background-size: 125px 195px;
-	-o-background-size: 125px 195px;
-	background-size: 125px 195px;
-	width: 125px;
-	height: 195px;
-}
-
-.horus-main-menu {
+.datasus-main-menu-button {
+	margin: 1em 0 0;
 	.x-button {
-		margin: 0;
+		background: none;
 		border-radius: 0;
-		height: 4em;
 		border: 0;
-		border-top: 1px solid #d3d3d3;
-		&.x-button-pressing {
-			background: #f7f7f7;
-			border-color: #d3d3d3;
-			.x-button-icon {
-				color: $main-color;
-				background: #fff;
-			}
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+		padding: 0.5em 0.5em;
+		width: 15em;
+		height: auto;
+		.x-button-icon {
+			background: $main-color;
+			border-radius: 4em;
+			color: #fff;
+			font-size: 0.7em;
+			width: 2.8em;
+			height: 2.8em;
+			line-height: 3.2em;
+			text-align: center;
+			margin: 0 1em 0 0;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.09);
+		}
+		.x-button-label {
+			font-family: 'signika_negativelight', sans-serif;
+			color: #fff;
+			text-align: left;
 		}
 		&:after {
 			position: absolute;
-			font-family: 'FontAwesome';
 			content: '\f105';
+			font-family: 'FontAwesome';
 			top: 50%;
-			right: 10px;
-			font-size: 2em;
+			font-size: 1.4em;
+			color: rgba(255, 255, 255, 0.5);
+			right: 0.3em;
 			margin-top: -0.5em;
-			color: #D3D3D3;
+		}
+		&.x-button-pressing {
+			background: rgba(255, 255, 255, 0.15);
+			.x-button-icon {
+				background: $sec-color;
+			}
+			&:after { 
+				content: #fff;
+			}
 		}
 	}
-	.x-button:first-child {
-		border: none;
+	.x-panel-inner .x-button:last-child {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
-	.x-button-icon {
-		border: 0.1em solid #53e780;
-		border-radius: 100px;
-		height: 2.5em;
-		width: 2.5em;
-		line-height: 2.7em;
-		text-align: center;
-	}
-	.x-button-label {
-		text-align: left;
-		color: #666666 !important;
-		padding-left: 10px;
-		font-size: 1.2em;
-	}
+}
 
+// .horus-main-menu {
+// 	.x-button {
+// 		margin: 0;
+// 		border-radius: 0;
+// 		height: 4em;
+// 		border: 0;
+// 		border-top: 1px solid #d3d3d3;
+// 		&.x-button-pressing {
+// 			background: #f7f7f7;
+// 			border-color: #d3d3d3;
+// 			.x-button-icon {
+// 				color: $main-color;
+// 				background: #fff;
+// 			}
+// 		}
+// 		&:after {
+// 			position: absolute;
+// 			font-family: 'FontAwesome';
+// 			content: '\f105';
+// 			top: 50%;
+// 			right: 10px;
+// 			font-size: 2em;
+// 			margin-top: -0.5em;
+// 			color: #D3D3D3;
+// 		}
+// 	}
+// 	.x-button:first-child {
+// 		border: none;
+// 	}
+// 	.x-button-icon {
+// 		border: 0.1em solid #53e780;
+// 		border-radius: 100px;
+// 		height: 2.5em;
+// 		width: 2.5em;
+// 		line-height: 2.7em;
+// 		text-align: center;
+// 	}
+// 	.x-button-label {
+// 		text-align: left;
+// 		color: #666666 !important;
+// 		padding-left: 10px;
+// 		font-size: 1.2em;
+// 	}
+
+// }
+
+.x-button-label, 
+.x-badge {
+	font-family: 'signika_negativeregular', sans-serif;
 }
 
 // Pesquisa 
 
 .horus-search {
-	margin: 0.8em;
-	border-radius: 0.2em;
+	margin: 0.8em 0 0;
 }
 
 .search-button.x-button {
@@ -227,9 +338,8 @@ $dark-color: #172835;
 }
 
 .datasus-form-show {
-	margin: 0 1em;
 	.x-form-fieldset-title {
-		margin-left: 0;
+		
 	}
 	.x-form-label {
 		padding: .6em .6em 0em 1em;
@@ -297,8 +407,7 @@ $dark-color: #172835;
 }
 
 .lista-agendamentos {
-	margin: 0 1em 1em;
-	border: 1px solid #d7d7d7;
+
 	.x-html {
 		padding: 0;
 	}
@@ -307,11 +416,19 @@ $dark-color: #172835;
 	}
 	.x-list-item {
 		background: #fff;
+		height: 70px !important;
+		&.x-list-item-tpl:before {
+			bottom: 0px;
+			left: 1.2em;
+		}
 	}
 }
 
+.lista-historico-bg {
+	background: #fff;
+}
+
 .agentamento-item {
-	border-bottom: 1px solid #EBEBEB;
 	padding: 0.8em 0.8em 0.8em 3.5em;
 	position: relative;
 	.agendamento-icon {
@@ -327,19 +444,19 @@ $dark-color: #172835;
 		line-height: 2em;
 		border-radius: 1em;
 		color: #fff;
-		&.INICIAL {
+		&.statusI {
 			background: $main-color;
 			.fa:before {
 				content: '\f073'; //Calendario
 			}
 		}
-		&.ATENDIDO {
+		&.statusT {
 			background: $sec-color;
 			.fa:before {
 				content: '\f00c'; // Check
 			}
 		}
-		&.NAOATENDIDO {
+		&.statusD {
 			background: #FF4F4F;
 			.fa:before {
 				content: '\f00d'; // Remove
@@ -365,6 +482,7 @@ $dark-color: #172835;
 		float: left;
 		width: 33.3333%;
 		font-size: 0.7em;
+		height: 2.5em;
 		.fa {
 			font-size: 1.2em;
 			width: 1.6em;
@@ -403,11 +521,13 @@ $dark-color: #172835;
 		padding: 1em;
 		strong {
 			display: block;
-			font-size: 1.2em;
+			font-size: 1em;
+			letter-spacing: -0.04em;
 		}
 		.estabelecimento-info {
-			font-size: 1em;
+			font-size: 0.8em;
 			color: #979797;
+			letter-spacing: -0.02em;
 		}
 		.distancia {
 			font-size: 1em;
@@ -418,6 +538,7 @@ $dark-color: #172835;
 			color: #fff;
 			border-radius: 0.3em;
 			margin: 2px 0 -2px 0;
+			letter-spacing: -0.09em;
 			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07) inset;
 			em {
 				font-style: normal;
@@ -429,14 +550,14 @@ $dark-color: #172835;
 	}
 }
 
-
-
 // Informações
 
 .horus-info-logo {
 	margin: 10px 20px;
+	text-align: center;
 	img {
 		width: 100%;
+		max-width: 200px;
 	}
 }
 
@@ -445,7 +566,6 @@ $dark-color: #172835;
 		width: auto;
 		background: #fff;
 		margin: 10px;
-		border: 1px solid #d7d7d7;
 		padding: 1.3em;
 		text-align: justify;
 		font-size: 0.9em;
