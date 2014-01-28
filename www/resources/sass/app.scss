@@ -81,6 +81,7 @@ $main-color: #4fcfff; // Cor principal
 $main-color-inverse: #fff; // Cor do texto com contraste da cor principal
 $sec-color: #23e05c;
 $dark-color: #172835;
+$red-color: #ff0000;
 
 .datasus-header.x-toolbar {
 	color: $main-color;
@@ -310,6 +311,28 @@ $dark-color: #172835;
 		background: lighten($main-color,10%);
 		border-color: darken($main-color,10%);
 	}
+}
+
+.search-button-red.x-button {
+  background: $red-color;
+  color: $main-color-inverse;
+  margin: 0.7em;
+  border-radius: 0.2em;
+  padding: 0.4em 0.4em;
+  overflow: hidden;
+  height: auto;
+  border-color: darken($red-color,10%);
+
+  .x-button-icon {
+    color: $main-color-inverse !important;
+  }
+  .x-button-label {
+    color: $main-color-inverse !important;
+  }
+  &.x-button-pressing {
+    background: lighten($red-color,10%);
+    border-color: darken($red-color,10%);
+  }
 }
 
 // Forms
